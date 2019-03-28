@@ -1,0 +1,23 @@
+﻿@using Northwind.Models
+@model IEnumerable<Northwind.Models.Category>
+
+@{
+    ViewData["Title"] = "Category";
+}
+
+<h2 class="mt-3"><i class="fas fa-list-ul"></i> Product Categories</h2>
+<div class="list-group">
+    <!-- foreach category in the Model -->
+    @foreach (Category category in @Model)
+    {
+        <!-- print an anchor tag with bootstrap classes for list group item -->
+        <!-- asp-action directs to the CategoryDetail method -->
+        <!-- with the asp-route-id linked to the CategoryId -->
+        <!-- The url will be "Product/CategoryDetail/{CategoryId} -->
+        <a class="list-group-item list-group-item-action"
+           asp-action="CategoryDetail"
+           asp-route-id="@category.CategoryId">
+            @category.CategoryName - <i style="opacity: .6;">@category.Description</i>
+        </a>
+    }
+</div>

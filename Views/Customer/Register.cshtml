@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+@using Northwind.Models
+@model Customer
+<h1>Register</h1>
+<form asp-action="Register" method="post" class="form-horizontal">
+    <div asp-validation-summary="All" class="alert-danger"></div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="CompanyName" class="control-label">Company Name:</label>
+            <input asp-for="CompanyName" class="form-control" placeholder="Company Name" />
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Address" class="control-label">Address:</label>
+            <input asp-for="Address" class="form-control" placeholder="Address" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-3">
+            <label asp-for="City" class="control-label">City:</label>
+            <input asp-for="City" class="form-control" placeholder="City" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Region" class="control-label">Region:</label>
+            <input asp-for="Region" class="form-control" placeholder="Region" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="PostalCode" class="control-label">Postal Code:</label>
+            <input asp-for="PostalCode" class="form-control" placeholder="Postal Code" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Country" class="control-label">Country:</label>
+            <input asp-for="Country" class="form-control" placeholder="Country" />
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="Phone" class="control-label">Phone:</label>
+            <input asp-for="Phone" class="form-control" placeholder="Phone" />
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Fax" class="control-label">Fax:</label>
+            <input asp-for="Fax" class="form-control" placeholder="Fax" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Register</button>
+</form>

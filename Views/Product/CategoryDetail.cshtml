@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "CategoryDetail";
+}
+@using Northwind.Models
+@model IEnumerable<Product>
+<!-- bootstrap table -->
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col" class="text-right">Price</th>
+            <th scope="col" class="text-right">Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <!-- for each product, print a table row -->
+            <tr>
+                <td>@product.ProductName</td>
+                <td class="text-right">@($"{@product.UnitPrice:C}")</td>
+                <td class="text-right">@product.UnitsInStock</td>
+            </tr>
+        }
+    </tbody>
+</table>

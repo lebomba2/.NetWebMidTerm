@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Discounts";
+}
+<!-- import Models and assign the IEnumerable to Model-->
+@using Northwind.Models
+@model IEnumerable<Discount>
+
+<h2 class="mt-3"><i class="fas fa-tag"></i> Product Discounts</h2>
+<!-- bootstrap list-->
+<div class="list-group">
+    @foreach (Discount discount in Model)
+    {
+        <!-- bootstrap list item-->
+        <div class="list-group-item">
+            @discount.Title<br />
+            @discount.Description<br />
+            Discount Expires: <i>@discount.EndTime.ToString("MM/dd/yyyy")</i><br />
+            <a href="#" class="code" data-code="@discount.Code" data-product="@discount.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
+        </div>
+    }
+</div>
+
+<!-- define the Scripts section for Discounts view-->
+@section Scripts
+    {
+    <script src="/js/client.js"></script>
+}
