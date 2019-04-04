@@ -17,6 +17,7 @@ namespace Northwind.Models
         public IQueryable<Discount> Discounts => context.Discounts;
         public IQueryable<Customer> Customers => context.Customers;
 
+        // add customer to the context
         public void AddCustomer(Customer customer) {
             context.Add(customer);
             context.SaveChanges();

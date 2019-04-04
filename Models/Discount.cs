@@ -12,6 +12,7 @@ namespace Northwind.Models
         public string Title { get; set; }
         public string Description { get; set; }
 
+        // Navigation Property linking Discount to Product
         public Product Product { get; set; }
     }
 }

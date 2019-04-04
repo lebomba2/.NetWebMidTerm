@@ -11,6 +11,8 @@ namespace Northwind.Models
         public short UnitsOnOrder { get; set; }
         public short ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
+
+        // Navigation Property linking Category to Product
         public int CategoryId { get; set; }
         public Category Category { get; set; }
     }

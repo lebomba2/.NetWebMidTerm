@@ -9,6 +9,8 @@ namespace Northwind.Controllers
 {
     public class CustomerController : Controller
     {
+        // This controller depends on the repository
+        // instantiate repository in constructor
         private INorthwindRepository repository;
         public CustomerController(INorthwindRepository repo) => repository = repo;
 
@@ -21,6 +23,9 @@ namespace Northwind.Controllers
         public IActionResult Register() {
             return View();
         }
+
+        // http post version of Register
+        // validation occurs here
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Register(Customer model) {

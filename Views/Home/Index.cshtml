@@ -13,6 +13,7 @@
 </div>
 
 <div class="row">
+    @*for each Discount passed to the view, only 3 asre passed in from the Home Controller*@
     @foreach (Discount d in Model)
     {
         <div class="col-md m-3 p-3 discounts">
@@ -26,6 +27,7 @@
     }
 </div>
 
+@*Define the Scripts section to be loaded in the layout page*@
 @section Scripts
     {
     <script src="./js/client.js"></script>
